@@ -9,7 +9,7 @@ This project is heavily inspired by Erik Berglund's [AppBlocker](https://github.
 # Why
 
 Apple wants end users to upgrade to the latest macOS as soon as it becomes available. Depending on the software and policies your organization uses, this might be unacceptable. As an administrator, you currently have some options:
-- Use an MDM to push a profile to delay updates for maximmum of 90 days. This will however postbone _all_ updates, not just the macOS upgrade.
+- Use an MDM to push a profile to delay updates for maximum of 90 days. This will however postpone _all_ updates, not just the macOS upgrade.
 - If your fleet is enrolled in an MDM, you can use `softwareupdate --ignore` to hide certain updates. This will result in a highly broken user experience where the system thinks it has an update pending but it is unable to download and install it. Apple has also decided that only MDM enrolled systems can use the `--ignore` flag.
 - If you are already using a binary authorization system such as Googles [Santa](https://github.com/google/santa), you should use it but deploying a system like Santa only for blocking Big Sur might be unfeasible.
 
