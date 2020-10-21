@@ -2,6 +2,8 @@
 
 Detect when `Install macOS Big Sur.app` installer application has launched, terminate the process and display an alert.
 
+![bigsurblocker](https://raw.githubusercontent.com/hjuutilainen/bigsurblocker/main/screenshot.jpg)
+
 This project is heavily inspired by Erik Berglund's [AppBlocker](https://github.com/erikberglund/AppBlocker). It uses the same underlying idea of registering and listening for NSWorkspace notifications when app has started up and then checking the CFBundleIdentifier of the launched app to identify a Big Sur installer launch.
 
 # Requirements
