@@ -1,0 +1,14 @@
+{
+    "name": "bigsurblocker-${version}.pkg",
+    "version": "20201021",
+    "identifier": "com.hjuutilainen.bigsurblocker",
+    "postinstall_action": "none",
+    "suppress_bundle_relocation": true,
+    "distribution_style": false,
+    "install_location": "/",
+    "ownership": "recommended",
+    "signing_info": {
+        "identity": "Developer ID Installer: Hannes Juutilainen (8XXWJ76X9Y)",
+        "timestamp": true
+    }
+}

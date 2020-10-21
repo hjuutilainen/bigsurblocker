@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $3 != "/" ]]; then
+    exit 0
+fi
+
+launchd_item_path="/Library/LaunchAgents/com.hjuutilainen.bigsurblocker.plist"
+current_user_uid=$( echo "show State:/Users/ConsoleUser" | scutil | awk '/UID :/ && ! /loginwindow/ { print $3 }' )
+
+launchctl bootout gui/${current_user_uid} "${launchd_item_path}" > /dev/null 2>&1
+launchctl bootstrap gui/${current_user_uid} "${launchd_item_path}"
+
+exit 0
