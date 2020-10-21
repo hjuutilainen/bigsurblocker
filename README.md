@@ -19,7 +19,7 @@ The `bigsurblocker` binary is installed in `/usr/local/bin` and is launched for 
 
 # Requirements
 
-The binary requires at least macOS 10.9, however I've only tested this on macOS 10.13 and 10.14.
+The binary requires at least macOS 10.9, however I've only tested this on macOS 10.13, 10.14 and 10.15.
 
 # Configuration
 
