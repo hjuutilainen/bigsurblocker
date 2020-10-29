@@ -38,12 +38,11 @@
         NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.hjuutilainen.bigsurblocker"];
 
         NSArray *bundleIDsToBlock = [userDefaults arrayForKey:@"bundleIDsToBlock"];
-
         if (!bundleIDsToBlock) {
-        bundleIDsToBlock = @[
-            @"com.apple.InstallAssistant.BigSur",
-            @"com.apple.InstallAssistant.Seed.macOS1016Seed1",
-        ];
+            bundleIDsToBlock = @[
+                @"com.apple.InstallAssistant.BigSur",
+                @"com.apple.InstallAssistant.Seed.macOS1016Seed1",
+            ];
         }
         if ([bundleIDsToBlock containsObject:bundleID]) {
             NSLog(@"Detected macOS installer app launch");
