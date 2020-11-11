@@ -17,9 +17,13 @@ Apple wants end users to upgrade to the latest macOS as soon as it becomes avail
 
 The `bigsurblocker` binary is installed in `/usr/local/bin` and is launched for each user through a launch agent. This means that the binary is running in the user session and therefore has the privileges of the current user. It runs silently in the background and listens for app launch notifications. As soon as the user launches the macOS installer application, the binary (forcefully) terminates it and displays a warning message.
 
+By design, it will _not_ block the `startosinstall` command line tool.
+
 # Requirements
 
-The binary requires at least macOS 10.9, however I've only tested this on macOS 10.13, 10.14 and 10.15.
+The binary requires at least macOS 10.9, however it has been tested only on macOS 10.10, 10.11, 10.12, 10.13, 10.14 and 10.15.
+
+Note. It seems that macOS 10.10 and 10.11 have trouble installing a signed and notarized package. Use the unsigned package available from the releases page if deploying on those. The signed and notarized package can be used on macOS 10.12 and later.
 
 # Configuration
 
@@ -27,7 +31,9 @@ All configuration is optional. If needed, the alert title and text can be set th
 
 # Installation
 
-Download a prebuilt package from the [Releases page](https://github.com/hjuutilainen/bigsurblocker/releases) and deploy with your favorite method. The package is signed and notarized.
+On macOS 10.12 and later, download a prebuilt package from the [Releases page](https://github.com/hjuutilainen/bigsurblocker/releases) and deploy with your favorite method. The package is signed and notarized.
+
+On OS X 10.11 and earlier, download and deploy an unsigned package from the [Releases page](https://github.com/hjuutilainen/bigsurblocker/releases) and deploy with your favorite method
 
 # Uninstall
 
