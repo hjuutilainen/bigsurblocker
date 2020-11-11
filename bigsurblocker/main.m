@@ -41,6 +41,7 @@
         if (!bundleIDsToBlock) {
             bundleIDsToBlock = @[
                 @"com.apple.InstallAssistant.BigSur",
+                @"com.apple.InstallAssistant.macOSBigSur",
                 @"com.apple.InstallAssistant.Seed.macOS1016Seed1",
             ];
         }
