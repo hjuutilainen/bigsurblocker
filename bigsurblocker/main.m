@@ -83,7 +83,11 @@
                     [alert setMessageText:[NSString stringWithFormat:messageText, appName]];
                     [alert setInformativeText:informativeText];
 
-                    [alert addButtonWithTitle:NSLocalizedString(@"OK", @"")];
+                    NSString *buttonTitle = [userDefaults stringForKey:@"ButtonTitle"];
+                    if (!buttonTitle) {
+                        buttonTitle = NSLocalizedString(@"OK", @"");
+                    }
+                    [alert addButtonWithTitle:buttonTitle];
                     [alert setAlertStyle:NSAlertStyleWarning];
                     [alert setIcon:[NSImage imageNamed:NSImageNameCaution]];
 
