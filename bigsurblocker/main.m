@@ -8,8 +8,9 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSAlertDelegate>
 @property BOOL alertTriggered;
+- (BOOL)alertShowHelp:(NSAlert *)alert;
 @end
 
 @implementation AppDelegate
@@ -90,6 +91,14 @@
                     [alert addButtonWithTitle:buttonTitle];
                     [alert setAlertStyle:NSAlertStyleWarning];
                     [alert setIcon:[NSImage imageNamed:NSImageNameCaution]];
+                    
+                    // If a custom help URL is defined in defaults, enable the help button
+                    NSString *helpURLString = [userDefaults stringForKey:@"HelpURL"];
+                    if (helpURLString) {
+                        [alert setDelegate:self];
+                        [alert setShowsHelp:YES];
+                    }
+                    
 
                     // Show the alert above all other apps and windows
                     [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
@@ -106,6 +115,18 @@
             }
         }
     }];
+}
+
+- (BOOL)alertShowHelp:(NSAlert *)alert
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.hjuutilainen.bigsurblocker"];
+    NSString *helpURLString = [userDefaults stringForKey:@"HelpURL"];
+    if (helpURLString) {
+        NSURL *helpURL = [NSURL URLWithString:helpURLString];
+        [[NSWorkspace sharedWorkspace] openURL:helpURL];
+    }
+    
+    return YES;
 }
 
 @end
