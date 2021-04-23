@@ -1,6 +1,6 @@
 {
     "name": "bigsurblocker-${version}.pkg",
-    "version": "20201021",
+    "version": "20201111",
     "identifier": "com.hjuutilainen.bigsurblocker",
     "postinstall_action": "none",
     "suppress_bundle_relocation": true,
